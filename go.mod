@@ -1,4 +1,4 @@
-module github.com/getrcis/xorm
+module github.com/getrics/xorm
 
 go 1.27
 

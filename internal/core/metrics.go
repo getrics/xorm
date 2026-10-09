@@ -3,6 +3,7 @@ package core
 import (
 	"github.com/harluo/prometheus"
 	"github.com/harluo/xorm"
+	"github.com/prometheus/client_golang/prometheus/collectors"
 )
 
 type Metrics struct {
@@ -14,10 +15,7 @@ func newMetrics(
 ) (metrics *Metrics, err error) {
 	metrics = new(Metrics)
 	selector.Foreach(func(name string, engine *xorm.Engine) {
-		err = registry.Register(collectors.NewDBStatsCollector(db, name))
-		if err != nil {
-			break
-		}
+		err = registry.Register(collectors.NewDBStatsCollector(engine.DB().DB, name))
 	})
 
 	return
