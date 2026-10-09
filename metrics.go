@@ -1,4 +1,4 @@
-package prometheus
+package xorm
 
 import (
 	"github.com/getrics/xorm/internal/core"
