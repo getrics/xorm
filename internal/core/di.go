@@ -6,6 +6,6 @@ import (
 
 func init() {
 	di.New().Instance().Put(
-		newRegistry,
+		newMetrics,
 	).Build().Apply()
 }

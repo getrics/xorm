@@ -1,7 +1,7 @@
 package prometheus
 
 import (
-	"github.com/getrcis/xorm/internal/core"
+	"github.com/getrics/xorm/internal/core"
 )
 
 // Metrics 指标
